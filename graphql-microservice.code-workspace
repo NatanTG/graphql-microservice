@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "name": "graphql-microservice",
+      "path": "."
+    },
+    {
+      "name": "core",
+      "path": "./core"
+    },
+    {
+      "name": "report-generator",
+      "path": "./report-generator"
+    },
+  ],
+  "settings": {
+        "git.detectSubmodules": true,
+        "git.decorations.enabled": true
+    }
+}

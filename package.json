@@ -1,0 +1,78 @@
+{
+  "name": "graphql-microservice-workspace",
+  "version": "1.0.0",
+  "description": "Workspace for GraphQL microservices with report generation",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "./scripts/setup.sh",
+    "dev": "./scripts/dev.sh",
+    "test": "./scripts/test.sh",
+    "test:coverage": "./scripts/test.sh --coverage",
+    "test:watch": "./scripts/test.sh --watch",
+    "test:core": "./scripts/test.sh --project core",
+    "test:report-gen": "./scripts/test.sh --project report-generator",
+    "build": "./scripts/build.sh",
+    "build:clean": "./scripts/build.sh --clean",
+    "build:prod": "./scripts/build.sh --production",
+    "build:core": "./scripts/build.sh --project core",
+    "build:report-gen": "./scripts/build.sh --project report-generator",
+    "update": "./scripts/update.sh",
+    "update:deps": "./scripts/update.sh --deps",
+    "update:force": "./scripts/update.sh --force",
+    "clean": "pnpm clean:core && pnpm clean:report-gen && rm -rf logs temp reports",
+    "clean:core": "cd core && pnpm clean",
+    "clean:report-gen": "cd report-generator && pnpm clean",
+    "lint": "pnpm lint:core && pnpm lint:report-gen",
+    "lint:fix": "pnpm lint:fix:core && pnpm lint:fix:report-gen",
+    "lint:core": "cd core && pnpm lint",
+    "lint:report-gen": "cd report-generator && pnpm lint",
+    "lint:fix:core": "cd core && pnpm lint:fix",
+    "lint:fix:report-gen": "cd report-generator && pnpm lint:fix",
+    "format": "pnpm format:core && pnpm format:report-gen",
+    "format:core": "cd core && pnpm format",
+    "format:report-gen": "cd report-generator && pnpm format",
+    "type-check": "pnpm type-check:core && pnpm type-check:report-gen",
+    "type-check:core": "cd core && pnpm type-check",
+    "type-check:report-gen": "cd report-generator && pnpm type-check",
+    "start:core": "cd core && pnpm start",
+    "start:report-gen": "cd report-generator && pnpm start",
+    "logs:core": "tail -f logs/core.log",
+    "logs:report-gen": "tail -f logs/report-generator.log",
+    "logs": "tail -f logs/*.log",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "workspaces": [
+    "core",
+    "report-generator"
+  ],
+  "keywords": [
+    "graphql",
+    "microservices",
+    "typescript",
+    "nodejs",
+    "mongodb",
+    "pubsub",
+    "reports",
+    "imdb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.10.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "cross-env": "^7.0.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/node": "^24.3.1"
+    }
+  }
+}
