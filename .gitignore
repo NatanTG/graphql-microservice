@@ -74,3 +74,19 @@ gcloud/
 .gcloud/
 *-key.json
 service-account*.json
+gcp-service-account.json
+
+# Application specific
+uploads/
+reports/
+*.csv
+*.xlsx
+
+# Docker
+.dockerignore
+
+# MongoDB dumps
+*.dump
+
+# Redis dumps
+*.rdb
